@@ -49,13 +49,15 @@ def button_div():
     math='division'
     f_num = int(first_number)
     e.delete(0,END)
-def button_floor():
-    first_number= e.get()
+
+def button_mod():
+    first_number = e.get()
     global f_num
     global math
-    math='floordivision'
+    math = 'mod'
     f_num = int(first_number)
-    e.delete(0,END)
+    e.delete(0, END)
+
 def button_equal():
 
     second_number = e.get()
@@ -68,8 +70,8 @@ def button_equal():
         e.insert(0, f_num * int(second_number))
     elif math=='division':
         e.insert(0, f_num / int(second_number))
-    elif math=='floordivision':
-        e.insert(0, f_num // int(second_number))
+    elif math=='mod':
+        e.insert(0, f_num % int(second_number))
 
 
 
@@ -88,7 +90,7 @@ b10=Button(root,text='+',font='lucid 20 bold',fg='red',bg='black',command= butto
 b11=Button(root,text='0',font='lucid 20 bold',fg='white',bg='black',command=lambda :button_click(0))
 b12=Button(root,text='-',font='lucid 20 bold',fg='red',bg='black',command= button_sub)
 b13=Button(root,text='*',font='lucid 20 bold',fg='red',bg='black',command= button_mul)
-b14=Button(root,text='//',font='lucid 20 bold',fg='red',bg='black',command=button_floor)
+b14=Button(root,text='Mod',font='lucid 20 bold',fg='red',bg='black',command= button_mod)
 
 
 b15=Button(root,text='=',font='lucid 20 bold',fg='red',bg='black',command=button_equal)
